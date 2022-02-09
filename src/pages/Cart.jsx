@@ -20,7 +20,7 @@ const CartPage = () => {
         <div className={classes.control}>
           <div className={classes.total}>
             <span>Total Amount:&nbsp;</span>
-            <span>₹{cartCtx.totalAmount}</span>
+            <span>${cartCtx.totalAmount}</span>
           </div>
           <div className={`${classes.total} ${classes.order}`}>
             <span>Place Order</span>

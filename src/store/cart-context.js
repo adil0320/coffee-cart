@@ -108,9 +108,6 @@ export const CartContextProvider = (props) => {
   };
   return (
     <CartContext.Provider value={context}>
-      {console.log(cartState)}
-      {/* {console.log(cartState.totalAmount)}
-       */}
       {props.children}
     </CartContext.Provider>
   );

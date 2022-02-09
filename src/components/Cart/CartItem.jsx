@@ -8,7 +8,7 @@ const CartItem = (props) => {
       <td>{props.name}</td>
       <td>
         <span className={classes.marginRight}>
-          ₹{props.price} x {props.quantity}
+          ${props.price} x {props.quantity}
         </span>
 
         <button
@@ -24,7 +24,7 @@ const CartItem = (props) => {
 
       <td>
         <span className={classes.marginRight}>
-          ₹{props.quantity * props.price}
+          ${props.quantity * props.price}
         </span>
         <button
           className={`${classes["btn-cart"]} ${classes["btn-remove"]}`}

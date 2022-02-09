@@ -26,7 +26,7 @@ const MenuItem = (props) => {
           <div className={classes.ingredients}>
             Ingredients: {props.ingredients}
           </div>
-          <div className={classes.price}>Price: {props.price}</div>
+          <div className={classes.price}>Price: ${props.price}</div>
         </div>
         <div>
           <MenuItemForm onAddToCart={addToCartHandler} />
