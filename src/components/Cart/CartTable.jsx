@@ -21,9 +21,11 @@ const CartTable = () => {
   return (
     <table className={classes.table}>
       <thead>
-        <th>Item</th>
-        <th>Quantity</th>
-        <th>Total</th>
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
       </thead>
       <tbody>
         {cartCtx.items.map((item) => (

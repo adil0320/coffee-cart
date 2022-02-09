@@ -6,9 +6,15 @@ tr span {
 .btn-cart {
   background-color: #fc4a1a;
   border: 1px solid #922709;
-  height: 1.5rem;
+  height: 2rem;
+  width: 2rem;
   cursor: pointer;
-  margin-top: -100rem;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.btn-cart:hover {
+  background-color: #922709;
 }
 
 .marginRight {
