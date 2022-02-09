@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import CartPage from "./pages/Cart";
 import MenuPage from "./pages/Menu";
@@ -9,6 +9,9 @@ const App = () => {
   return (
     <Layout>
       <Switch>
+        <Route path="/" exact>
+          <Redirect to="/menu" />
+        </Route>
         <Route path="/menu">
           <MenuPage />
         </Route>

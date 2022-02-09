@@ -1,0 +1,20 @@
+tr span {
+  margin: 0;
+  padding: 0;
+}
+
+.btn-cart {
+  background-color: #fc4a1a;
+  border: 1px solid #922709;
+  height: 1.5rem;
+  cursor: pointer;
+  margin-top: -100rem;
+}
+
+.marginRight {
+  margin-right: 0.4rem;
+}
+
+.btn-remove {
+  border-radius: 50%;
+}

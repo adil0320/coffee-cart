@@ -6,6 +6,8 @@
   justify-content: space-between;
   background-color: #4abdac;
   padding: 0 15%;
+  position: fixed;
+  top: 0;
 }
 
 .header ul {
@@ -21,15 +23,21 @@
   font-size: 1.5rem;
 }
 
-.header a {
+a {
   text-decoration: none;
-
-  color: #dfdce3;
 }
 
 .logo {
   font-size: 2rem;
   font-weight: bold;
+}
+
+.logo a {
+  color: white;
+}
+
+nav a {
+  color: #dfdce3;
 }
 
 .header a:hover,
@@ -48,4 +56,9 @@
 
 .active {
   border-bottom: 0.3rem solid #f6b733;
+}
+
+.CartDisplay {
+  margin-left: 1rem;
+  font-weight: bold;
 }

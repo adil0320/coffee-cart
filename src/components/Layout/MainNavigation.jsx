@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink, Link } from "react-router-dom";
+import CartContext from "../../store/cart-context";
 
 import classes from "./MainNavigation.module.css";
 
 const MainNavigation = () => {
+  const cartCtx = useContext(CartContext);
   return (
     <header className={classes.header}>
       <div className={classes.logo}>
-        <Link to="/menu">Adil's Cafe</Link>
+        <Link to="/">Adil's Cafe</Link>
       </div>
       <nav>
         <ul>
@@ -19,6 +21,9 @@ const MainNavigation = () => {
           <li>
             <NavLink to="/cart" activeClassName={classes.active}>
               Cart
+              <span className={classes.CartDisplay}>
+                {cartCtx.totalQuantity}
+              </span>
             </NavLink>
           </li>
         </ul>
