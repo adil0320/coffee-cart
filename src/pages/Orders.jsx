@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import Card from "../components/UI/Card";
+import LoadingSpinner from "../components/UI/LoadingSpinner";
 import OrderItem from "../Orders/OrderItem";
 import AuthContext from "../store/auth-context";
 
@@ -31,14 +32,14 @@ const OrdersPage = () => {
     getOrders();
   }, [authCtx.email]);
 
-  if (orders.length === 0) {
+  if (orders.length === 0 && !isLoading) {
     return <h2 style={{ textAlign: "center" }}>No Orders Yet</h2>;
   }
 
   return (
     <>
       <h2 className={classes.title}>Orders</h2>
-      {isLoading && <h2 style={{ textAlign: "center" }}>No Orders Yet</h2>}
+      {isLoading && <LoadingSpinner />}
       <div className={classes.orders}>
         <ul>
           {orders.map((order) => (

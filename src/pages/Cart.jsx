@@ -1,17 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import CartContext from "../store/cart-context";
 import classes from "./Cart.module.css";
 import CartTable from "../components/Cart/CartTable";
 import AuthContext from "../store/auth-context";
 import { useHistory } from "react-router-dom";
+import LoadingSpinner from "../components/UI/LoadingSpinner";
 
 const CartPage = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const cartCtx = useContext(CartContext);
   const authCtx = useContext(AuthContext);
   const history = useHistory();
   const hasCartItems = cartCtx.items.length > 0;
 
   const orderSubmitHandler = async () => {
+    setIsLoading(true);
     await fetch("https://adils-cafe-default-rtdb.firebaseio.com/orders.json", {
       method: "POST",
       body: JSON.stringify({
@@ -24,6 +27,7 @@ const CartPage = () => {
         "Content-Type": "application/json",
       },
     });
+    setIsLoading(false);
     cartCtx.clearCart();
     history.push("/orders");
   };
@@ -38,6 +42,7 @@ const CartPage = () => {
     content = (
       <>
         <div className={classes.title}>Cart</div>
+        {isLoading && <LoadingSpinner />}
         <div className={classes.control}>
           <div className={classes.total}>
             <span>Total Amount:&nbsp;</span>

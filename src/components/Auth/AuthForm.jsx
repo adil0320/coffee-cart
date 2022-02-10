@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import AuthContext from "../../store/auth-context";
 
 import Card from "../UI/Card";
+import LoadingSpinner from "../UI/LoadingSpinner";
 import classes from "./AuthForm.module.css";
 
 const AuthForm = () => {
@@ -81,6 +82,7 @@ const AuthForm = () => {
   return (
     <>
       <h1 className={classes.title}>{isLogin ? "Login" : "Sign Up"}</h1>
+      {isLoading && <LoadingSpinner />}
       <Card>
         <form className={classes.form} onSubmit={submitHandler}>
           <div className={classes.control}>
@@ -106,13 +108,13 @@ const AuthForm = () => {
               onChange={passwordChangeHandler}
             />
           </div>
+
           <div className={classes.actions}>
             {!isLoading && (
               <button disabled={!formIsValid}>
                 {isLogin ? "Login" : "Sign Up"}
               </button>
             )}
-            {isLoading && <p>Sending Request</p>}
 
             <button type="button" onClick={toggleAuthModeHandler}>
               {isLogin ? "Create an account" : "Login With existing account"}
