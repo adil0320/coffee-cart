@@ -1,8 +1,10 @@
 import React from "react";
 
+import classes from "./OrderItem.module.css";
+
 const OrderItem = (props) => {
   return (
-    <div key={props.id}>
+    <div key={props.id} className={classes.name}>
       <span>
         Item Name: {props.name} ={">"}{" "}
       </span>

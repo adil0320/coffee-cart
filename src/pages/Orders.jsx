@@ -49,7 +49,9 @@ const OrdersPage = () => {
                   <div className={classes.amount}>
                     Total Amount: ${order.totalAmount}
                   </div>
-                  <div>Order Date: {order.orderDate}</div>
+                  <div style={{ marginTop: "1rem" }}>
+                    Order Date: {order.orderDate}
+                  </div>
                   <div>
                     {order.items.map((item) => (
                       <OrderItem
