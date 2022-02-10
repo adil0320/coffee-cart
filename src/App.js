@@ -6,14 +6,18 @@ import CartPage from "./pages/Cart";
 import MenuPage from "./pages/Menu";
 import AuthPage from "./pages/Auth";
 import AuthContext from "./store/auth-context";
+import OrdersPage from "./pages/Orders";
 
 const App = () => {
   const authCtx = useContext(AuthContext);
+
+  // authCtx.login(localStorage.getItem("token"), localStorage.getItem("email"));
+
   return (
     <Layout>
       <Switch>
         {!authCtx.isLoggedIn && (
-          <Route path="/" exact>
+          <Route path="*" exact>
             <AuthPage />
           </Route>
         )}
@@ -35,6 +39,11 @@ const App = () => {
         {authCtx.isLoggedIn && (
           <Route path="/cart">
             <CartPage />
+          </Route>
+        )}
+        {authCtx.isLoggedIn && (
+          <Route path="/orders">
+            <OrdersPage />
           </Route>
         )}
       </Switch>

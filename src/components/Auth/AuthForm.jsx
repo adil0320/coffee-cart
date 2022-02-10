@@ -70,6 +70,8 @@ const AuthForm = () => {
       }
       const responseData = await response.json();
       authCtx.login(responseData.idToken, responseData.email);
+      localStorage.setItem("email", responseData.email);
+      localStorage.setItem("token", responseData.idToken);
       history.replace("/menu");
     } catch (err) {
       console.log(err);

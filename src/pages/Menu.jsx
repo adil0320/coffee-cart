@@ -1,4 +1,3 @@
-import React from "react";
 import classes from "./Menu.module.css";
 
 import CoffeeMenu from "../components/Menu/CoffeeMenu";
