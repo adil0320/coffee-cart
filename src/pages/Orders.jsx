@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import Card from "../components/UI/Card";
 import LoadingSpinner from "../components/UI/LoadingSpinner";
-import OrderItem from "../Orders/OrderItem";
+import OrderItem from "../components/Orders/OrderItem";
 import AuthContext from "../store/auth-context";
 
 import classes from "./Orders.module.css";
