@@ -9,13 +9,16 @@ const OrdersPage = () => {
   const authCtx = useContext(AuthContext);
 
   const [orders, setOrders] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     const getOrders = async () => {
       const orders = await fetch(
         `https://adils-cafe-default-rtdb.firebaseio.com/orders.json?orderBy="email"&equalTo="${authCtx.email}"`
       );
       const ordersData = await orders.json();
+      setIsLoading(false);
 
       const loadedOrders = [];
 
@@ -35,6 +38,7 @@ const OrdersPage = () => {
   return (
     <>
       <h2 className={classes.title}>Orders</h2>
+      {isLoading && <h2 style={{ textAlign: "center" }}>No Orders Yet</h2>}
       <div className={classes.orders}>
         <ul>
           {orders.map((order) => (
